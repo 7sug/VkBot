@@ -1,4 +1,6 @@
 import random
+
+
 class User:
     user_id = 0
 
