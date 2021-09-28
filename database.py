@@ -13,7 +13,7 @@ def create_connection(database, user, password, host, port):
 
 
 def insert_user(id, money, user_name, health, clan, power, peer_id):
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("vk_bot", "postgres", "password", "127.0.0.1", "port")
     cur = connection.cursor()
     cur.execute(
         """INSERT INTO USERS (ID,MONEY,USER_NAME,HEALTH,CLAN,POWER,PEER_ID) VALUES (%s, %s, %s, %s, %s, %s, %s)""",
