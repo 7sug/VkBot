@@ -24,7 +24,7 @@ def insert_user(id, money, user_name, health, clan, power, peer_id):
 
 def check_uniq_user(peer_id):
     query = """ SELECT PEER_ID FROM USERS """
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("vk_bot", "postgres", "password", "127.0.0.1", "port")
     cur = connection.cursor()
     cur.execute(query)
     rows = cur.fetchall()
