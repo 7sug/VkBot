@@ -11,7 +11,7 @@ import time
 
 keyboard = open("keyboards/default.json", "r", encoding="UTF-8").read()
 
-token = '366cc4368436cc5036e3928d2f387d147d2de7ef0f9eaa31d69ad9ef77bd3b1f5f32722bb7c2e55cd4f71'
+token = 'your_token'
 
 api = vk_api.VkApi(token=token)
 longpoll = VkLongPoll(api)
