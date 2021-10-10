@@ -7,8 +7,9 @@ class User:
     def __init__(self):
         self.health = 100
         self.money = 100
-        self.exp = 100
+        self.exp = 0
         self.power = 100
+        self.lvl = 0
         clans = ['Учиха', 'Узумаки', 'Хьюго']
         self.user_clan = random.choice(clans)
         if self.user_clan == 'Учиха':

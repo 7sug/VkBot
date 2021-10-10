@@ -1,0 +1,33 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "label": "Темный лес"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Радужная поляна"
+        },
+        "color": "positive"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Таинственное подземелье"
+      },
+      "color": "default"
+    }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Главное меню"
+      },
+      "color": "default"
+    }]
+  ]
+}

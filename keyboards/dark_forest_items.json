@@ -1,0 +1,56 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "label": "Палка"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Железный меч"
+        },
+        "color": "positive"
+      }],
+    [
+      {
+        "action": {
+          "type": "text",
+          "label": "Шапка"
+        },
+        "color": "positive"
+      },
+      {
+        "action": {
+          "type": "text",
+          "label": "Щит"
+        },
+        "color": "positive"
+      }],
+    [
+      {
+        "action": {
+          "type": "text",
+          "label": "Зачарованный клык"
+        },
+        "color": "positive"
+      },
+      {
+        "action": {
+          "type": "text",
+          "label": "Секира ужаса"
+        },
+        "color": "positive"
+      }],
+        [{
+      "action": {
+        "type": "text",
+        "label": "Главное меню"
+      },
+      "color": "default"
+    }]
+  ]
+}

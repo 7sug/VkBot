@@ -1,0 +1,26 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "label": "Темный магазин"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Страшные твари"
+        },
+        "color": "negative"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Главное меню"
+      },
+      "color": "default"
+    }]
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "one_time": false,
+  "buttons": [
+    [
+      {
+        "action": {
+          "type": "text",
+          "label": "Профиль"
+        },
+        "color": "positive"
+      }],
+    [
+      {
+        "action": {
+          "type": "text",
+          "label": "Локации"
+        },
+        "color": "default"
+      },
+      {
+        "action": {
+          "type": "text",
+          "label": "Инвентарь"
+        },
+        "color": "positive"
+    }]
+  ]
+}

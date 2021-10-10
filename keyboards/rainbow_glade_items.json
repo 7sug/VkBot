@@ -1,0 +1,47 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "label": "Амулет силы"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Амулет защиты"
+        },
+        "color": "positive"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Кольцо бога"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Клинок пламени"
+        },
+        "color": "positive"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Броня эльфов"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Главное меню"
+        },
+        "color": "default"
+      }]
+  ]
+}

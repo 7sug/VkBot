@@ -1,0 +1,40 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "label": "Странный торговец"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Поворот направо"
+        },
+        "color": "positive"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Поворот налево"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "Проход прямо"
+        },
+        "color": "positive"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "Главное меню"
+      },
+      "color": "default"
+    }]
+  ]
+}
