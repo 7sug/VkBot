@@ -15,7 +15,7 @@ def create_connection(database, user, password, host, port):
 
 
 def insert_user(id, money, user_name, health, clan, power, peer_id, exp, lvl):
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute(
         """INSERT INTO USERS (ID,MONEY,USER_NAME,HEALTH,CLAN,POWER,PEER_ID, EXP, LVL)
@@ -29,7 +29,7 @@ def insert_user(id, money, user_name, health, clan, power, peer_id, exp, lvl):
 def check_uniq_user(user_id):
     a = 0
     query = """ SELECT PEER_ID FROM USERS """
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute(query)
     rows = cur.fetchall()
@@ -45,7 +45,7 @@ def check_uniq_user(user_id):
 
 def show_profile(user_id):
     query = """SELECT HEALTH, USER_NAME, POWER, CLAN, MONEY, LVL FROM USERS WHERE PEER_ID = '%s'""" % user_id
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute(query)
     rows = cur.fetchall()
@@ -61,7 +61,7 @@ def show_profile(user_id):
 
 def shop_show_items(bd_name):
     query = """SELECT ITEM_NAME, ITEM_POWER, ITEM_HEALTH, ITEM_COAST FROM %s""" % bd_name
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute(query)
     rows = cur.fetchall()
@@ -76,7 +76,7 @@ def monster_fight_queries(user_id, bd_name):
     user_data = []
     monster_query = """SELECT NAME, POWER, HEALTH, REWARD, EARN_EXP FROM %s ORDER BY RANDOM() LIMIT 1""" % bd_name
     user_query = """SELECT POWER, HEALTH, MONEY, EXP FROM USERS WHERE PEER_ID = '%s'""" % user_id
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     first_cur = connection.cursor()
     first_cur.execute(monster_query)
     monster_rows = first_cur.fetchall()
@@ -101,7 +101,7 @@ def monster_fight_queries(user_id, bd_name):
 def insert_reward(user_id, money, exp):
     query = """UPDATE USERS SET MONEY = '%s' WHERE PEER_ID = '%s'""" % (money, user_id)
     query_exp = """UPDATE USERS SET exp = '%s' WHERE PEER_ID = '%s'""" % (exp, user_id)
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute(query)
     cur.execute(query_exp)
@@ -111,7 +111,7 @@ def insert_reward(user_id, money, exp):
 
 def check_inv(user_id, item_name):
     user_items = []
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute("""SELECT NAME FROM INVENTORY WHERE USER_ID = '%s'""" % user_id)
     rows = cur.fetchall()
@@ -126,7 +126,7 @@ def check_inv(user_id, item_name):
 
 def show_inventory(user_id):
     user_items = []
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute("""SELECT NAME FROM INVENTORY WHERE USER_ID = '%s'""" % user_id)
     rows = cur.fetchall()
@@ -140,7 +140,7 @@ def buy_items(user_id, item_name, bd_name):
     item_data = []
     user_inventory = []
     item_query = """SELECT ITEM_POWER, ITEM_HEALTH, ITEM_COAST FROM %s WHERE ITEM_NAME = '%s'""" % (bd_name, item_name)
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     first_cur = connection.cursor()
     first_cur.execute(item_query)
     rows = first_cur.fetchall()
@@ -180,7 +180,7 @@ def check_exp(user_id):
     exp = 0
     exp_patterns = [100, 200, 400, 500, 1000, 2000, 4000, 8000, 16000, 32000]
     query = """SELECT EXP FROM USERS WHERE PEER_ID = '%s'""" % user_id
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute(query)
     rows = cur.fetchall()
@@ -196,7 +196,7 @@ def check_exp(user_id):
 def lvl_up(user_id):
     current_lvl = 0
     lvl = check_exp(user_id)
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     lvl_query = """SELECT LVL FROM USERS WHERE PEER_ID = '%s'""" % user_id
     cur.execute(lvl_query)
@@ -220,7 +220,7 @@ def lvl_up(user_id):
 
 def key(user_id, key_name):
     user_items = []
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     cur = connection.cursor()
     cur.execute("""SELECT NAME FROM INVENTORY WHERE USER_ID = '%s'""" % user_id)
     rows = cur.fetchall()
@@ -238,7 +238,7 @@ def boss_fight_queries(user_id, bd_name, boss_name):
     user_data = []
     monster_query = """SELECT NAME, POWER, HEALTH, REWARD, EARN_EXP FROM %s WHERE NAME = '%s'""" % (bd_name, boss_name)
     user_query = """SELECT POWER, HEALTH, MONEY, EXP FROM USERS WHERE PEER_ID = '%s'""" % user_id
-    connection = create_connection("vk_bot", "postgres", "redonu28", "127.0.0.1", "5432")
+    connection = create_connection("database", "user", "your_pass", "host", "port")
     first_cur = connection.cursor()
     first_cur.execute(monster_query)
     monster_rows = first_cur.fetchall()
